@@ -1,0 +1,32 @@
+{
+  "index": 144,
+  "phase": 2,
+  "batch": 16,
+  "name": "copper-model-feature-dock",
+  "planned_name": "copper-model-feature-dock",
+  "language": "Haskell",
+  "category": "ML utilities",
+  "goal": "Create a Haskell reference implementation for feature workflows, centered on diagnostic reporting, negative fixtures, and human-readable error snapshots.",
+  "repository_url": "https://github.com/ZachL111/copper-model-feature-dock",
+  "verification_command": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/verify.ps1",
+  "model": {
+    "inputs": [
+      "demand",
+      "capacity",
+      "latency",
+      "risk",
+      "weight"
+    ],
+    "threshold": 165,
+    "risk_penalty": 6,
+    "latency_penalty": 3,
+    "weight_bonus": 3,
+    "decision_rule": "accept when score is greater than or equal to threshold, otherwise review"
+  },
+  "quality_gates": [
+    "readme constraint scan",
+    "fixture presence check",
+    "metadata JSON parse",
+    "language verifier"
+  ]
+}
