@@ -1,0 +1,73 @@
+{
+  "repo": "copper-model-feature-dock",
+  "language": "Haskell",
+  "category": "ML utilities",
+  "goal": "Create a Haskell reference implementation for feature workflows, centered on diagnostic reporting, negative fixtures, and human-readable error snapshots.",
+  "review_model": {
+    "terms": [
+      "feature drift",
+      "window width",
+      "metric stability",
+      "explainability"
+    ],
+    "lanes": [
+      "ship",
+      "watch",
+      "hold"
+    ],
+    "score": "signal * 2 + slack + confidence - drag * 3",
+    "purpose": "surface the domain-specific cases that need the most careful review"
+  },
+  "cases": [
+    {
+      "name": "baseline",
+      "focus": "feature drift",
+      "signal": 50,
+      "slack": 48,
+      "drag": 21,
+      "confidence": 72,
+      "score": 157,
+      "lane": "ship"
+    },
+    {
+      "name": "stress",
+      "focus": "window width",
+      "signal": 49,
+      "slack": 23,
+      "drag": 13,
+      "confidence": 76,
+      "score": 158,
+      "lane": "ship"
+    },
+    {
+      "name": "edge",
+      "focus": "metric stability",
+      "signal": 46,
+      "slack": 28,
+      "drag": 15,
+      "confidence": 52,
+      "score": 127,
+      "lane": "watch"
+    },
+    {
+      "name": "recovery",
+      "focus": "explainability",
+      "signal": 84,
+      "slack": 44,
+      "drag": 17,
+      "confidence": 71,
+      "score": 232,
+      "lane": "ship"
+    },
+    {
+      "name": "stale",
+      "focus": "feature drift",
+      "signal": 76,
+      "slack": 47,
+      "drag": 29,
+      "confidence": 64,
+      "score": 176,
+      "lane": "ship"
+    }
+  ]
+}
